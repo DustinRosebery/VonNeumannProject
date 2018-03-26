@@ -1,6 +1,8 @@
 package mainMenu;
 
+import characters.Character;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -8,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,6 +30,12 @@ public class MainMenuController implements Initializable{
     @FXML private TextField nameTextField;
     @FXML private ChoiceBox<String> originChoiceBox;
     @FXML private ChoiceBox<String> agendaChoiceBox;
+
+    // character creation description
+    @FXML private Label countryDescriptionLbl;
+    @FXML private AnchorPane countryDescriptionAnchor;
+    @FXML private Label agendaDescriptionLbl;
+    @FXML private AnchorPane agendaDescriptionAnchor;
 
     /**
      * Application Startup initialization
@@ -52,12 +61,36 @@ public class MainMenuController implements Initializable{
      */
     @FXML
     private void onClickNewGameBtn(ActionEvent event) {
+        // Character Creation Pane
         characterCreationAnchor.setVisible(true);
         characterCreationLbl.setText("Create Your Probe");
         nameTextField.clear();
+        // Main Menu Modifications
         mainMenuLbl.setVisible(false);
         continueBtn.setDisable(true);
         loadBtn.setDisable(true);
+        // Descriptions
+        String country = originChoiceBox.getSelectionModel().getSelectedItem();
+        countryDescriptionLbl.setText(CharacterCreation.getCountryDescription(country));
+        countryDescriptionAnchor.setVisible(true);
+        String agenda = agendaChoiceBox.getSelectionModel().getSelectedItem();
+        agendaDescriptionLbl.setText(CharacterCreation.getAgendaDescription(agenda));
+        agendaDescriptionAnchor.setVisible(true);
+
+
+        System.out.println("Clicked New Game");
+    }
+
+    @FXML
+    private void onStateChangeCountryDescription(Event event) {
+        String country = originChoiceBox.getSelectionModel().getSelectedItem();
+        countryDescriptionLbl.setText(CharacterCreation.getCountryDescription(country));
+    }
+
+    @FXML
+    private void onStateChangeAgendaDescription(Event event) {
+        String agenda = agendaChoiceBox.getSelectionModel().getSelectedItem();
+        agendaDescriptionLbl.setText(CharacterCreation.getAgendaDescription(agenda));
     }
 
     /**
@@ -77,6 +110,7 @@ public class MainMenuController implements Initializable{
                 originChoiceBox.getSelectionModel().getSelectedItem(),
                 agendaChoiceBox.getSelectionModel().getSelectedItem());
         newCharacter.debugCharacter();
+        System.out.println("Clicked Create Character");
     }
 
     /**
@@ -90,5 +124,14 @@ public class MainMenuController implements Initializable{
         mainMenuLbl.setVisible(true);
         continueBtn.setDisable(false);
         loadBtn.setDisable(false);
+        countryDescriptionAnchor.setVisible(false);
+        agendaDescriptionAnchor.setVisible(false);
+        System.out.println("Clicked Cancel Button");
+    }
+
+    @FXML
+    private void onClickContinueButton(ActionEvent event) {
+        mainMenuLbl.setVisible(false);
+
     }
 }

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,16 +16,19 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.MainMenuController">
    <children>
       <ImageView fx:id="nebulaView" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="mainMenuLbl" alignment="CENTER" layoutY="200.0" prefHeight="96.0" prefWidth="600.0" text="The Von Neumann Project" textAlignment="CENTER" visible="false">
+      <Label fx:id="mainMenuLbl" alignment="CENTER" depthTest="DISABLE" layoutY="45.0" prefHeight="96.0" prefWidth="600.0" text="The Von Neumann Project" textAlignment="CENTER" textFill="WHITE" visible="false">
          <font>
-            <Font name="System Bold" size="36.0" />
+            <Font name="System Bold" size="40.0" />
          </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="39.66" radius="19.33" spread="0.39" width="39.66" />
+         </effect>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="63.0" layoutY="337.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Button id="newGameBtn" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#onClickNewGameBtn" prefHeight="31.0" prefWidth="186.0" text="New Game" />
       <Button id="continueGameBtn" fx:id="continueBtn" layoutX="207.0" layoutY="353.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Continue" />
       <Button id="loadBtn" fx:id="loadBtn" layoutX="400.0" layoutY="353.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Load " />
-      <AnchorPane fx:id="characterCreationAnchor" layoutX="157.0" layoutY="45.0" prefHeight="244.0" prefWidth="262.0">
+      <AnchorPane fx:id="characterCreationAnchor" layoutX="157.0" layoutY="45.0" prefHeight="244.0" prefWidth="285.0" visible="false">
          <children>
             <Rectangle id="characterCreationBackground" arcHeight="5.0" arcWidth="5.0" fill="#9c9c9c99" height="244.0" stroke="#0000007f" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" width="286.0" />
             <Label fx:id="characterCreationLbl" alignment="CENTER" layoutX="7.0" layoutY="4.0" prefHeight="63.0" prefWidth="271.0" text="Create Your Probe" textAlignment="CENTER">
@@ -53,8 +57,8 @@
             <VBox fx:id="characterCreationInputVbox" alignment="CENTER" layoutX="100.0" layoutY="54.0" prefHeight="146.0" prefWidth="171.0">
                <children>
                   <TextField fx:id="nameTextField" prefHeight="31.0" prefWidth="130.0" />
-                  <ChoiceBox fx:id="originChoiceBox" prefHeight="31.0" prefWidth="171.0" />
-                  <ChoiceBox fx:id="agendaChoiceBox" prefHeight="31.0" prefWidth="172.0" />
+                  <ChoiceBox fx:id="originChoiceBox" onAction="#onStateChangeCountryDescription" prefHeight="31.0" prefWidth="171.0" />
+                  <ChoiceBox fx:id="agendaChoiceBox" onAction="#onStateChangeAgendaDescription" prefHeight="31.0" prefWidth="172.0" />
                </children>
             </VBox>
             <HBox alignment="CENTER" layoutY="181.0" prefHeight="63.0" prefWidth="286.0" spacing="20.0">
@@ -66,6 +70,28 @@
                      </opaqueInsets></Button>
                </children>
             </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="countryDescriptionAnchor" layoutX="-1.0" layoutY="45.0" prefHeight="244.0" prefWidth="143.0" visible="false">
+         <children>
+            <Label fx:id="countryDescriptionLbl" prefHeight="244.0" prefWidth="146.0" textFill="WHITE" wrapText="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="agendaDescriptionAnchor" layoutX="454.0" layoutY="45.0" prefHeight="244.0" prefWidth="143.0" visible="false">
+         <children>
+            <Label fx:id="agendaDescriptionLbl" layoutX="-3.0" prefHeight="248.0" prefWidth="146.0" textFill="WHITE" wrapText="true">
+                <effect>
+                    <DropShadow />
+                </effect>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font></Label>
          </children>
       </AnchorPane>
    </children>
