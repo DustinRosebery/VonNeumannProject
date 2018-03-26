@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 public class CharacterCreation {
 
     private static String[] countries = {"United States", "China", "Russia"};
-    private static String[] agendas = {"Observation", "Science", "Galactic Domination", "Manipluation"};
+    private static String[] agendas = {"Observation", "Galactic Domination", "Total Conversion"};
 
     private String name;
     private String origin;

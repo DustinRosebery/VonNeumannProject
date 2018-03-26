@@ -1,0 +1,4 @@
+United States
+- Avg material cost
+- Avg reliability
+- Avg research time

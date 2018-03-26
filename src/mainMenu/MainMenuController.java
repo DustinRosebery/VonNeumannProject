@@ -36,7 +36,7 @@ public class MainMenuController implements Initializable{
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nebulaView.setImage(new Image("nebula.png"));
+        nebulaView.setImage(new Image("images/nebula.png"));
         originChoiceBox.setItems(CharacterCreation.getCountries());
         originChoiceBox.getSelectionModel().selectFirst();
         agendaChoiceBox.setItems(CharacterCreation.getAgendas());

@@ -15,7 +15,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.MainMenuController">
    <children>
       <ImageView fx:id="nebulaView" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="mainMenuLbl" alignment="CENTER" layoutY="200.0" prefHeight="96.0" prefWidth="600.0" text="The Von Neumann Project" textAlignment="CENTER" underline="true">
+      <Label fx:id="mainMenuLbl" alignment="CENTER" layoutY="200.0" prefHeight="96.0" prefWidth="600.0" text="The Von Neumann Project" textAlignment="CENTER" visible="false">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
@@ -24,7 +24,7 @@
       <Button id="newGameBtn" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#onClickNewGameBtn" prefHeight="31.0" prefWidth="186.0" text="New Game" />
       <Button id="continueGameBtn" fx:id="continueBtn" layoutX="207.0" layoutY="353.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Continue" />
       <Button id="loadBtn" fx:id="loadBtn" layoutX="400.0" layoutY="353.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Load " />
-      <AnchorPane fx:id="characterCreationAnchor" layoutX="157.0" layoutY="45.0" prefHeight="244.0" prefWidth="276.0">
+      <AnchorPane fx:id="characterCreationAnchor" layoutX="157.0" layoutY="45.0" prefHeight="244.0" prefWidth="262.0">
          <children>
             <Rectangle id="characterCreationBackground" arcHeight="5.0" arcWidth="5.0" fill="#9c9c9c99" height="244.0" stroke="#0000007f" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" width="286.0" />
             <Label fx:id="characterCreationLbl" alignment="CENTER" layoutX="7.0" layoutY="4.0" prefHeight="63.0" prefWidth="271.0" text="Create Your Probe" textAlignment="CENTER">
@@ -57,7 +57,7 @@
                   <ChoiceBox fx:id="agendaChoiceBox" prefHeight="31.0" prefWidth="172.0" />
                </children>
             </VBox>
-            <HBox alignment="CENTER" layoutY="181.0" prefHeight="63.0" prefWidth="271.0" spacing="20.0">
+            <HBox alignment="CENTER" layoutY="181.0" prefHeight="63.0" prefWidth="286.0" spacing="20.0">
                <children>
                   <Button fx:id="createCharacterBtn" mnemonicParsing="false" onAction="#onClickCreateButton" text="Create" />
                   <Button fx:id="cancelCreateCharacterBtn" lineSpacing="10.0" mnemonicParsing="false" onAction="#onClickCancelBtn" text="Cancel">
