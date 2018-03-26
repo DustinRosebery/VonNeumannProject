@@ -16,8 +16,6 @@ public class MainMenu extends Application {
         primaryStage.show();
     }
 
-    //Test Change
-
     public static void main(String[] args) {
         launch(args);
     }
