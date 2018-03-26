@@ -18,21 +18,15 @@ public class MainMenuController implements Initializable{
     @FXML private ImageView nebulaView;
 
     // background menu buttons
-    @FXML private Button newGameBtn;
     @FXML private Button continueBtn;
     @FXML private Button loadBtn;
 
     // character creation panel
     @FXML private AnchorPane characterCreationAnchor;
     @FXML private Label characterCreationLbl;
-    @FXML private Label nameLbl;
-    @FXML private Label originLbl;
-    @FXML private Label agendaLbl;
     @FXML private TextField nameTextField;
     @FXML private ChoiceBox<String> originChoiceBox;
     @FXML private ChoiceBox<String> agendaChoiceBox;
-    @FXML private Button createCharacterBtn;
-    @FXML private Button cancelCreateCharacterBtn;
 
     /**
      * Application Startup initialization

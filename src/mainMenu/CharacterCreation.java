@@ -3,9 +3,6 @@ package mainMenu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CharacterCreation {
 
     private static String[] countries = {"United States", "China", "Russia"};
